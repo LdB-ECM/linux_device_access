@@ -67,7 +67,7 @@ UART_HANDLE UartOpenPort (uint8_t uart_devicenum, uint16_t baud, uint8_t datalen
 			uart_ptr->uart_speed = baud;							// Hold uart baud setting
 			uart_ptr->uart_datalen = datalen;						// Hold uart data length
 			uart_ptr->uart_partity = parity;						// Hold uart parity
-			uart_ptr->uart_twostopbits = stop;						// Hold uart stop bit settings
+			uart_ptr->uart_twostopbits = (stop == 2) ? 1 : 0;				// Hold uart stop bit settings
 			uart_ptr->uselocks = (useLock == true) ? 1 : 0;			// Set use lock
 			if (useLock)                                            // Using locks
 			{
